@@ -84,7 +84,12 @@ public class MainActivity extends AppCompatActivity {
                 if (response.length()>0)
                 {
                     final Map<String,List<ClassModel>> listMap = new HashMap<>();
-                    final List<ClassModel> list = new ArrayList<>();
+                    final List<ClassModel> list_1 = new ArrayList<>();
+                    final List<ClassModel> list_2 = new ArrayList<>();
+                    final List<ClassModel> list_3= new ArrayList<>();
+                    final List<ClassModel> list_4= new ArrayList<>();
+                    final List<ClassModel> list_5= new ArrayList<>();
+                    final List<ClassModel> list_6= new ArrayList<>();
 
                     JSONObject object=null;
                     for (int index=0;index<response.length();index++)
@@ -95,12 +100,62 @@ public class MainActivity extends AppCompatActivity {
                             {
 
 
-                                if (childModelList.get(x).getStage_id_pk().equals(object.get("stage_id_fk")))
+                                if (childModelList.get(x).getStage_name().equals("أول"))
                                 {
-                                    ClassModel classModel = new ClassModel(object.getString("class_id_pk"),object.getString("school_id_fk"),object.getString("stage_id_fk"),object.getString("class_title"));
-                                    list.add(classModel);
-                                    listMap.put(childModelList.get(x).getStage_name(),list);
+                                    if (object.get("class_title").toString().startsWith("1"))
+                                    {
+                                        ClassModel classModel = new ClassModel(object.getString("class_id_pk"),object.getString("school_id_fk"),object.getString("stage_id_fk"),object.getString("class_title"));
+                                        list_1.add(classModel);
+                                        listMap.put(childModelList.get(x).getStage_name(),list_1);
+                                    }
+
                                 }
+                                else if (childModelList.get(x).getStage_name().equals("ثاني "))
+                                {
+                                    if (object.get("class_title").toString().startsWith("2"))
+                                    {
+                                        ClassModel classModel = new ClassModel(object.getString("class_id_pk"),object.getString("school_id_fk"),object.getString("stage_id_fk"),object.getString("class_title"));
+                                        list_2.add(classModel);
+                                        listMap.put(childModelList.get(x).getStage_name(),list_2);
+                                    }
+                                }
+                                else if (childModelList.get(x).getStage_name().equals("ثالث "))
+                                {
+                                    if (object.get("class_title").toString().startsWith("3"))
+                                    {
+                                        ClassModel classModel = new ClassModel(object.getString("class_id_pk"),object.getString("school_id_fk"),object.getString("stage_id_fk"),object.getString("class_title"));
+                                        list_3.add(classModel);
+                                        listMap.put(childModelList.get(x).getStage_name(),list_3);
+                                    }
+                                }
+                                else if (childModelList.get(x).getStage_name().equals("رابع"))
+                                {
+                                    if (object.get("class_title").toString().startsWith("4"))
+                                    {
+                                        ClassModel classModel = new ClassModel(object.getString("class_id_pk"),object.getString("school_id_fk"),object.getString("stage_id_fk"),object.getString("class_title"));
+                                        list_4.add(classModel);
+                                        listMap.put(childModelList.get(x).getStage_name(),list_4);
+                                    }
+                                }
+                                else if (childModelList.get(x).getStage_name().equals("خامس "))
+                                {
+                                    if (object.get("class_title").toString().startsWith("5"))
+                                    {
+                                        ClassModel classModel = new ClassModel(object.getString("class_id_pk"),object.getString("school_id_fk"),object.getString("stage_id_fk"),object.getString("class_title"));
+                                        list_5.add(classModel);
+                                        listMap.put(childModelList.get(x).getStage_name(),list_5);
+                                    }
+                                }
+                                else if (childModelList.get(x).getStage_name().equals("سادس "))
+                                {
+                                    if (object.get("class_title").toString().startsWith("6"))
+                                    {
+                                        ClassModel classModel = new ClassModel(object.getString("class_id_pk"),object.getString("school_id_fk"),object.getString("stage_id_fk"),object.getString("class_title"));
+                                        list_6.add(classModel);
+                                        listMap.put(childModelList.get(x).getStage_name(),list_6);
+                                    }
+                                }
+
                             }
 
 
